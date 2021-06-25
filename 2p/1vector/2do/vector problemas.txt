@@ -1,0 +1,24 @@
+1.<script>
+let numbers = [3,2,1];
+numbers.splice(0,0,4);
+console.log(numbers);
+</script>og(numbers);
+</script>
+
+2.<script>
+let arreglo =[3,2,1];
+let number.indexOf();
+arreglo.splice(indice, 1);
+console.log(arreglo);
+</script>
+3.<script>
+let number =[3,2,1];
+nnumber.shift(number);
+console.log(number);
+</script>
+
+4.<script>
+let number =[3,2,1];
+nnumber.pop(number);
+console.log(number)
+</script>

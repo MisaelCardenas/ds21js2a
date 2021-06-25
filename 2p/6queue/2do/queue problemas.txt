@@ -1,0 +1,10 @@
+1.<script>
+let num = ["cuatro","uno","cinco"];
+num.push("dos");
+console.log(num);
+num.push("tres");
+console.log(num);
+</script>
+
+2.<script>
+</script>

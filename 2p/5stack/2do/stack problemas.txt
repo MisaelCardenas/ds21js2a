@@ -1,0 +1,15 @@
+1.<script>
+let number = ["oscar","arbol","disco"];
+let arbol =number.pop(number);
+console.log(arbol);
+console.log(number);
+</script>
+
+2.<script>
+let decimal=50;
+let hexadecimal=decimal.toString(16);
+let binario=decimal.toString(2);
+console.log(decimal);
+console.log(hexadecimal);
+console.log(binario);
+</script>
