@@ -1,0 +1,142 @@
+<script>
+class LinkedListItem {
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+}
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+  prepend(value) {
+    const newItem = new LinkedListItem(value, this.head);
+    this.head = newItem;
+  }
+  find(value) {
+    if (!this.head) {
+      return null;
+    }
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    }
+  }
+  deleteHead() {
+    if (this.head) {
+      if (this.head.next) {
+        const secondNode = this.head.next;
+        this.head = secondNode;
+      } else {
+        this.head = null;
+      }
+    }
+  }
+  print() {
+    let currentNode = this.head;
+    while (currentNode) {
+      console.log(currentNode.value);
+      currentNode = currentNode.next;
+    }
+  }
+}
+  list = new LinkedList();
+list.prepend("o");
+list.prepend("e");
+list.prepend("G");
+console.log(list.find("b"));
+list.print();
+</script>
+
+-------------------------------------------------------------------------------------
+
+<script>
+class Nodo {
+    constructor(val) {
+        this.data = val;
+        this.next = null;
+    }
+}
+ var nnodo;
+function push(new_data) {
+ var new_node = new Nodo(new_data);
+new_node.next = nnodo;
+nnodo = new_node;
+    }
+ function contador() {
+        var temp = nnodo;
+        var count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+        push(2);
+        push(3);
+        push(1);
+        push(2);
+        push(1);
+        push(1); 
+        console.log("El nodo es: "+   contador()); 
+</script>
+
+-------------------------------------------------------------------------------------
+
+<script>
+function Node(data){
+this.data = data;
+this.next = null;
+}
+function SinglyList(){
+this._length = 0;
+this.head = null;
+}
+SinglyList.prototype.add = function(val){
+var node = new Node(val),
+currentNode = this.head;
+if(!currentNode){
+this.head = node;
+this._length++;
+return;
+}
+while(currentNode.next){
+currentNode = currentNode.next;
+}
+currentNode.next = node;
+this._length++;
+return node;
+};
+SinglyList.prototype.remove = function(index){
+var currentNode = this.head, count=0, previous;  
+if(this._length===0) return;
+if(index===0){
+this.head = currentNode.next;
+this._length--;
+}else{
+while(count<index){
+previous = currentNode;
+currentNode = currentNode.next;
+count++;
+}
+previous.next = currentNode.next;
+return previous;
+}
+};
+var singlyList = new SinglyList();
+singlyList.add(1);
+singlyList.add(2);
+singlyList.add(3);
+singlyList.add(4);
+singlyList.add(5);
+singlyList.add(6);
+singlyList.add(7);
+singlyList.add(8);
+singlyList.add(9);
+singlyList.add(10);
+console.log(JSON.stringify(singlyList));
+console.log("Remove:n"+JSON.stringify(singlyList.remove(5)));  
+</script>

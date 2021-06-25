@@ -1,0 +1,185 @@
+1<script>
+function Node(data, left, right) {
+this.data = data;
+this.left = left;
+this.right = right;
+this.show = show;
+}
+function show() {
+return this.data;
+}
+function BST() {
+this.root = null;
+this.insert = insert;
+this.preorden = preorden;
+}
+function insert(data) {
+var n = new Node(data, null, null);
+if (this.root == null) {
+this.root = n;
+}
+else {
+var current = this.root;
+var parent;
+while (true) {
+parent = current;
+if (data < current.data) {
+current = current.left;
+if (current == null) {
+parent.left = n;
+break;
+}
+}
+else {
+current = current.right;
+if (current == null) {
+parent.right = n;
+break;
+}
+}
+}
+}
+}
+  function preorden(node) {
+if (!(node == null)) {
+console.log((node.show() + " "));
+preorden(node.left);
+preorden(node.right);
+}
+}
+ var nums = new BST();
+nums.insert(1);
+nums.insert(20);
+nums.insert("C");
+nums.insert(60);
+nums.insert(2);
+nums.insert("M");
+nums.insert(19);
+console.log("root: ");
+console.log(preorden(nums.root));
+
+</script>
+----------------------------------------------------
+2.<script>
+function Node(data, left, right) {
+this.data = data;
+this.left = left;
+this.right = right;
+this.show = show;
+}
+function show() {
+return this.data;
+}
+function BST() {
+this.root = null;
+this.insert = insert;
+this.inorden = inorden;
+}
+function insert(data) {
+var n = new Node(data, null, null);
+if (this.root == null) {
+this.root = n;
+}
+else {
+var current = this.root;
+var parent;
+while (true) {
+parent = current;
+if (data < current.data) {
+current = current.left;
+if (current == null) {
+parent.left = n;
+break;
+}
+}
+else {
+current = current.right;
+if (current == null) {
+parent.right = n;
+break;
+}
+}
+}
+}
+}
+  function inorden(node) {
+if (!(node == null)) {
+inorden(node.left);
+console.log((node.show() + " "));
+inorden(node.right);
+}
+}
+ var nums = new BST();
+nums.insert(1);
+nums.insert(20);
+nums.insert("C");
+nums.insert(60);
+nums.insert(2);
+nums.insert("M");
+nums.insert(19);
+console.log("root: ");
+console.log(preorden(nums.root));
+
+</script>
+----------------------------------------------------------
+3.<script>
+function Node(data, left, right) {
+this.data = data;
+this.left = left;
+this.right = right;
+this.show = show;
+}
+function show() {
+return this.data;
+}
+function BST() {
+this.root = null;
+this.insert = insert;
+this.postorden = postorden;
+}
+function insert(data) {
+var n = new Node(data, null, null);
+if (this.root == null) {
+this.root = n;
+}
+else {
+var current = this.root;
+var parent;
+while (true) {
+parent = current;
+if (data < current.data) {
+current = current.left;
+if (current == null) {
+parent.left = n;
+break;
+}
+}
+else {
+current = current.right;
+if (current == null) {
+parent.right = n;
+break;
+}
+}
+}
+}
+}
+  function postorden(node) {
+if (!(node == null)) {
+postorden(node.left);
+postorden(node.right);
+console.log((node.show() + " "));
+}
+}
+ var nums = new BST();
+nums.insert(1);
+nums.insert(20);
+nums.insert("C");
+nums.insert(60);
+nums.insert(2);
+nums.insert("M");
+nums.insert(19);
+console.log("root: ");
+console.log(preorden(nums.root));
+
+</script>
